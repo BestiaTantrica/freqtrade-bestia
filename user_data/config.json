@@ -7,20 +7,9 @@
     "tradable_balance_ratio": 0.99,
     "timeframe": "5m",
     "fiat_display_currency": "USD",
-    "cancel_open_orders_on_exit": false,
     "user_data_dir": "user_data",
     "trading_mode": "futures",
     "margin_mode": "isolated",
-    "entry_pricing": {
-        "price_side": "same",
-        "use_order_book": true,
-        "order_book_top": 1
-    },
-    "exit_pricing": {
-        "price_side": "same",
-        "use_order_book": true,
-        "order_book_top": 1
-    },
     "exchange": {
         "name": "binance",
         "key": "",
@@ -45,8 +34,7 @@
         },
         {"method": "AgeFilter", "min_days": 7},
         {"method": "PrecisionFilter"},
-        {"method": "PriceFilter", "low_price_ratio": 0.001},
-        {"method": "ShuffleFilter"}
+        {"method": "PriceFilter", "low_price_ratio": 0.001}
     ],
     "telegram": {
         "enabled": true,
