@@ -9,10 +9,8 @@
     "fiat_display_currency": "USD",
     "cancel_open_orders_on_exit": false,
     "user_data_dir": "user_data",
-
     "trading_mode": "futures",
     "margin_mode": "isolated",
-
     "entry_pricing": {
         "price_side": "same",
         "use_order_book": true,
@@ -23,7 +21,6 @@
         "use_order_book": true,
         "order_book_top": 1
     },
-
     "exchange": {
         "name": "binance",
         "key": "",
@@ -36,11 +33,9 @@
         "pair_whitelist": [],
         "pair_blacklist": [
             "(BNB)/.*",
-            ".*(_PREMIUM|BEAR|BULL|DOWN|UP|HEDGE)/.*",
-            "(AUD|BRZ|CAD|CHF|EUR|GBP|HKD|IDR|JPY|NGN|RUB|SGD|TRY|UAH|USD|ZAR|TZS)/.*"
+            ".*(_PREMIUM|BEAR|BULL|DOWN|UP|HEDGE)/.*"
         ]
     },
-
     "pairlists": [
         {
             "method": "VolumePairList",
@@ -53,13 +48,11 @@
         {"method": "PriceFilter", "low_price_ratio": 0.001},
         {"method": "ShuffleFilter"}
     ],
-
     "telegram": {
         "enabled": true,
         "token": "8073681433:AAHKneBxYgAdq56aaMrWm95eKeT2v8FvyFI",
         "chat_id": "6527908321"
     },
-
     "api_server": {
         "enabled": true,
         "listen_ip_address": "0.0.0.0",
@@ -69,7 +62,6 @@
         "username": "freqtrader",
         "password": "SuperPassword123"
     },
-
     "bot_name": "Sniper_V5_Dynamic",
     "initial_state": "running"
 }
