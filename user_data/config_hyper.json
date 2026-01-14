@@ -1,0 +1,55 @@
+{
+    "trading_mode": "futures",
+    "margin_mode": "isolated",
+    "max_open_trades": 15,
+    "stake_currency": "USDT",
+    "stake_amount": 120,
+    "tradable_balance_ratio": 0.99,
+    "timeframe": "5m",
+    "dry_run": true,
+    "stoploss": -0.15,
+    "minimal_roi": {
+        "0": 0.10
+    },
+    "entry_pricing": {
+        "price_side": "same",
+        "use_order_book": true,
+        "order_book_top": 1
+    },
+    "exit_pricing": {
+        "price_side": "same",
+        "use_order_book": true,
+        "order_book_top": 1
+    },
+    "exchange": {
+        "name": "binance",
+        "key": "",
+        "secret": "",
+        "ccxt_config": {"timeout": 60000},
+        "ccxt_async_config": {
+            "enableRateLimit": true,
+            "rateLimit": 200
+        },
+        "pair_whitelist": [
+            "BTC/USDT:USDT","ETH/USDT:USDT","SOL/USDT:USDT","ADA/USDT:USDT","DOT/USDT:USDT",
+            "XRP/USDT:USDT","LTC/USDT:USDT","LINK/USDT:USDT","BCH/USDT:USDT","AVAX/USDT:USDT",
+            "SHIB/USDT:USDT","DOGE/USDT:USDT","TRX/USDT:USDT","UNI/USDT:USDT","ATOM/USDT:USDT",
+            "ALGO/USDT:USDT","NEAR/USDT:USDT","FIL/USDT:USDT","ICP/USDT:USDT","FTM/USDT:USDT",
+            "SAND/USDT:USDT","MANA/USDT:USDT","GALA/USDT:USDT","MATIC/USDT:USDT","EGLD/USDT:USDT",
+            "THETA/USDT:USDT","HNT/USDT:USDT","KSM/USDT:USDT","AAVE/USDT:USDT","VET/USDT:USDT",
+            "AXS/USDT:USDT","GRT/USDT:USDT","STX/USDT:USDT","ENJ/USDT:USDT","CHZ/USDT:USDT",
+            "HOT/USDT:USDT","FLOW/USDT:USDT","ZIL/USDT:USDT","ONE/USDT:USDT","BAT/USDT:USDT",
+            "SUSHI/USDT:USDT","CRV/USDT:USDT","ANKR/USDT:USDT","REEF/USDT:USDT","RVN/USDT:USDT",
+            "WAVES/USDT:USDT","ETC/USDT:USDT","DASH/USDT:USDT","XMR/USDT:USDT","ZEC/USDT:USDT",
+            "EOS/USDT:USDT","NEO/USDT:USDT","QTUM/USDT:USDT","IOTA/USDT:USDT","KAVA/USDT:USDT",
+            "LRC/USDT:USDT","OMG/USDT:USDT","ONT/USDT:USDT","REN/USDT:USDT","SNX/USDT:USDT",
+            "SRM/USDT:USDT","STORJ/USDT:USDT","SXP/USDT:USDT","YFI/USDT:USDT","1INCH/USDT:USDT",
+            "AR/USDT:USDT","BAND/USDT:USDT","CELO/USDT:USDT","CTSI/USDT:USDT","DGB/USDT:USDT",
+            "ICX/USDT:USDT","IOST/USDT:USDT","IOTX/USDT:USDT","KNC/USDT:USDT","MDX/USDT:USDT",
+            "NKN/USDT:USDT","OGN/USDT:USDT","RLC/USDT:USDT","SKL/USDT:USDT"
+        ]
+    },
+    "pairlists": [
+        {"method": "StaticPairList"}
+    ]
+}

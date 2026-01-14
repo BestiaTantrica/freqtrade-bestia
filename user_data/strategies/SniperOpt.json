@@ -1,0 +1,32 @@
+{
+  "strategy_name": "SniperVolStrategy",
+  "params": {
+    "max_open_trades": {
+      "max_open_trades": 8
+    },
+    "buy": {
+      "buy_adx": 40,
+      "buy_rsi": 35
+    },
+    "sell": {
+      "sell_rsi": 84
+    },
+    "roi": {
+      "0": 0.077,
+      "27": 0.058,
+      "46": 0.01,
+      "140": 0
+    },
+    "stoploss": {
+      "stoploss": -0.297
+    },
+    "trailing": {
+      "trailing_stop": true,
+      "trailing_stop_positive": 0.245,
+      "trailing_stop_positive_offset": 0.301,
+      "trailing_only_offset_is_reached": false
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2026-01-11 03:01:08.962557+00:00"
+}

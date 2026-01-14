@@ -1,0 +1,51 @@
+from freqtrade.strategy import IStrategy
+from pandas import DataFrame
+import talib.abstract as ta
+import freqtrade.vendor.qtpylib.indicators as qtpylib
+
+class GuruStrategy(IStrategy):
+    INTERFACE_VERSION = 3
+    timeframe = '5m'
+    can_short = True
+
+    # --- PARÁMETROS OPTIMIZADOS (HYPEROPT) ---
+    minimal_roi = {
+        "0": 0.03,      # 3% directo
+        "15": 0.015,    # 1.5% tras 15 min
+        "40": 0.005     # 0.5% tras 40 min
+    }
+
+    stoploss = -0.015  # -1.5% (Regla de Oro)
+
+    buy_params = {
+        "rsi_value": 28,       # Optimizado
+        "rsi_enabled": True
+    }
+
+    sell_params = {
+        "rsi_value_exit": 72,  # Optimizado
+        "rsi_enabled_exit": True
+    }
+
+    def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
+        # RSI
+        dataframe['rsi'] = ta.RSI(dataframe, timeperiod=14)
+        return dataframe
+
+    def populate_entry_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
+        dataframe.loc[
+            (
+                (dataframe['rsi'] < self.buy_params['rsi_value']) &
+                (dataframe['volume'] > 0)
+            ),
+            'enter_long'] = 1
+        return dataframe
+
+    def populate_exit_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
+        dataframe.loc[
+            (
+                (dataframe['rsi'] > self.sell_params['rsi_value_exit']) &
+                (dataframe['volume'] > 0)
+            ),
+            'exit_long'] = 1
+        return dataframe
