@@ -1,40 +1,14 @@
 {
-    "dry_run": true,
-    "dry_run_wallet": 200,
+    "max_open_trades": 5,
     "stake_currency": "USDT",
     "stake_amount": "unlimited",
-    "max_open_trades": 5,
-    "tradable_balance_ratio": 0.99,
-    "timeframe": "5m",
-    "fiat_display_currency": "USD",
-    "user_data_dir": "user_data",
-    "trading_mode": "spot",
-    "entry_pricing": {
-        "price_side": "same",
-        "use_order_book": true,
-        "order_book_top": 1,
-        "price_last_balance": 0.0,
-        "check_depth_of_market": {
-            "enabled": false,
-            "bids_to_ask_delta": 1
-        }
-    },
-    "exit_pricing": {
-        "price_side": "same",
-        "use_order_book": true,
-        "order_book_top": 1
-    },
+    "tradable_balance_ratio": 0.90,
+    "dry_run": true,
+    "dry_run_wallet": 200,
+    "bot_name": "Sniper_V8_GitRestored",
+    "strategy": "SniperV5_MathLab",
     "exchange": {
         "name": "binance",
-        "key": "",
-        "secret": "",
-        "ccxt_config": {
-            "timeout": 60000
-        },
-        "ccxt_async_config": {
-            "enableRateLimit": true,
-            "rateLimit": 200
-        },
         "pair_whitelist": [
             "BTC/USDT",
             "ETH/USDT",
@@ -47,29 +21,22 @@
             "LINK/USDT",
             "DOT/USDT"
         ],
-        "pair_blacklist": [
-            ".*(_PREMIUM|BEAR|BULL|DOWN|UP|HEDGE)/.*"
-        ]
+        "ccxt_config": {"enableRateLimit": true}
     },
-    "pairlists": [
-        {
-            "method": "StaticPairList"
-        }
-    ],
+    "pairlists": [{"method": "StaticPairList"}],
     "telegram": {
         "enabled": true,
         "token": "8073681433:AAHKneBxYgAdq56aaMrWm95eKeT2v8FvyFI",
-        "chat_id": "6527908321"
+        "chat_id": "6527908321",
+        "notification_settings": {"status": "on", "entry": "on", "exit": "on"}
     },
     "api_server": {
         "enabled": true,
         "listen_ip_address": "0.0.0.0",
         "listen_port": 8080,
-        "verbosity": "error",
-        "jwt_secret_key": "arquitecto_secret_v5",
         "username": "freqtrader",
         "password": "SuperPassword123"
     },
-    "bot_name": "Sniper_V8_Live",
-    "initial_state": "running"
+    "entry_pricing": { "price_side": "same", "use_order_book": true },
+    "exit_pricing": { "price_side": "same", "use_order_book": true }
 }
