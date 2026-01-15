@@ -3,6 +3,7 @@ import talib.abstract as ta
 from pandas import DataFrame
 
 class SniperLab(IStrategy):
+    force_entry_enable = True
     INTERFACE_VERSION = 3
     timeframe = '5m'
     can_short = True

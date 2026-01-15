@@ -3,6 +3,7 @@ import pandas as pd
 import pandas_ta as ta
 
 class GuruStrategy(IStrategy):
+    force_entry_enable = True
     INTERFACE_VERSION = 3
     timeframe = '5m'
     

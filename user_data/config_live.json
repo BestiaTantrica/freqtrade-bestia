@@ -2,13 +2,34 @@
     "max_open_trades": 5,
     "stake_currency": "USDT",
     "stake_amount": "unlimited",
-    "tradable_balance_ratio": 0.90,
+    "tradable_balance_ratio": 0.99,
+    "last_stake_amount_min_ratio": 0.5,
     "dry_run": true,
-    "dry_run_wallet": 200,
-    "bot_name": "Sniper_V8_GitRestored",
-    "strategy": "SniperV5_MathLab",
+    "dry_run_wallet": 300,
+    "stake_amount_type": "unlimited",
+    "amend_last_stake_amount": false,
+    "unfilledtimeout": {
+        "entry": 10,
+        "exit": 30
+    },
+    "entry_pricing": {
+        "price_side": "same",
+        "use_order_book": true,
+        "order_book_top": 1,
+        "check_depth_of_market": {
+            "enabled": false,
+            "depth": 0
+        }
+    },
+    "exit_pricing": {
+        "price_side": "same",
+        "use_order_book": true,
+        "order_book_top": 1
+    },
     "exchange": {
         "name": "binance",
+        "key": "",
+        "secret": "",
         "pair_whitelist": [
             "BTC/USDT",
             "ETH/USDT",
@@ -21,22 +42,42 @@
             "LINK/USDT",
             "DOT/USDT"
         ],
-        "ccxt_config": {"enableRateLimit": true}
+        "pair_blacklist": [
+            "USTC/USDT",
+            "LUNC/USDT"
+        ]
     },
-    "pairlists": [{"method": "StaticPairList"}],
-    "telegram": {
-        "enabled": true,
-        "token": "8073681433:AAHKneBxYgAdq56aaMrWm95eKeT2v8FvyFI",
-        "chat_id": "6527908321",
-        "notification_settings": {"status": "on", "entry": "on", "exit": "on"}
+    "pairlists": [
+        {
+            "method": "StaticPairList"
+        }
+    ],
+    "edge": {
+        "enabled": false
     },
     "api_server": {
         "enabled": true,
         "listen_ip_address": "0.0.0.0",
         "listen_port": 8080,
+        "verbosity": "info",
+        "enable_https": false,
         "username": "freqtrader",
-        "password": "SuperPassword123"
+        "password": "SuperPassword123",
+        "cors_allowed_origins": [
+            "*"
+        ]
     },
-    "entry_pricing": { "price_side": "same", "use_order_book": true },
-    "exit_pricing": { "price_side": "same", "use_order_book": true }
+    "telegram": {
+        "enabled": true,
+        "token": "8073681433:AAHKneBxYgAdq56aaMrWm95eKeT2v8FvyFI",
+        "chat_id": "6527908321"
+    },
+    "strategy": "SniperV5_MathLab",
+    "stoploss": -0.1,
+    "timeframe": "5m",
+    "initial_state": "running",
+    "strategy_params": {
+        "buy_rsi": 32,
+        "buy_adx": 20
+    }
 }

@@ -3,6 +3,7 @@ from pandas import DataFrame
 import talib.abstract as ta
 
 class SniperVolStrategy(IStrategy):
+    force_entry_enable = True
     INTERFACE_VERSION = 3
     
     # ROI: Escalonado para asegurar ganancias (Scalping agresivo)

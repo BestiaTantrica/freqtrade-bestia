@@ -7,6 +7,7 @@ import talib.abstract as ta
 import freqtrade.vendor.qtpylib.indicators as qtpylib
 
 class SniperVolStrategy(IStrategy):
+    force_entry_enable = True
     INTERFACE_VERSION = 3
     
     # Tiempos y ROI (Serán sobreescritos por Hyperopt)

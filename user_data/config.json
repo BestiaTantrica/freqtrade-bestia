@@ -1,72 +1,42 @@
 {
-    "dry_run": true,
-    "dry_run_wallet": 1000,
+    "max_open_trades": 5,
     "stake_currency": "USDT",
-    "stake_amount": 120,
-    "max_open_trades": 15,
-    "tradable_balance_ratio": 0.99,
-    "timeframe": "5m",
-    "fiat_display_currency": "USD",
-    "user_data_dir": "user_data",
-    "trading_mode": "futures",
-    "margin_mode": "isolated",
-
-    "entry_pricing": {
-        "price_side": "same",
-        "use_order_book": true,
-        "order_book_top": 1,
-        "price_last_balance": 0.0,
-        "check_depth_of_market": {
-            "enabled": false,
-            "bids_to_ask_delta": 1
-        }
-    },
-    "exit_pricing": {
-        "price_side": "same",
-        "use_order_book": true,
-        "order_book_top": 1
-    },
-
+    "stake_amount": "unlimited",
+    "tradable_balance_ratio": 0.90,
+    "dry_run": true,
+    "dry_run_wallet": 300,
+    "bot_name": "Sniper_V8_GitRestored",
+    "strategy": "SniperV5_MathLab",
     "exchange": {
         "name": "binance",
-        "key": "",
-        "secret": "",
-        "ccxt_config": {"timeout": 60000},
-        "ccxt_async_config": {
-            "enableRateLimit": true,
-            "rateLimit": 200
-        },
-        "pair_whitelist": [],
-        "pair_blacklist": [
-            "(BNB)/.*",
-            ".*(_PREMIUM|BEAR|BULL|DOWN|UP|HEDGE)/.*"
-        ]
+        "pair_whitelist": [
+            "BTC/USDT",
+            "ETH/USDT",
+            "SOL/USDT",
+            "BNB/USDT",
+            "XRP/USDT",
+            "ADA/USDT",
+            "AVAX/USDT",
+            "DOGE/USDT",
+            "LINK/USDT",
+            "DOT/USDT"
+        ],
+        "ccxt_config": {"enableRateLimit": true}
     },
-    "pairlists": [
-        {
-            "method": "VolumePairList",
-            "number_assets": 80,
-            "sort_key": "quoteVolume",
-            "refresh_period": 1800
-        },
-        {"method": "AgeFilter", "min_days": 7},
-        {"method": "PrecisionFilter"},
-        {"method": "PriceFilter", "low_price_ratio": 0.001}
-    ],
+    "pairlists": [{"method": "StaticPairList"}],
     "telegram": {
         "enabled": true,
         "token": "8073681433:AAHKneBxYgAdq56aaMrWm95eKeT2v8FvyFI",
-        "chat_id": "6527908321"
+        "chat_id": "6527908321",
+        "notification_settings": {"status": "on", "entry": "on", "exit": "on"}
     },
     "api_server": {
         "enabled": true,
         "listen_ip_address": "0.0.0.0",
         "listen_port": 8080,
-        "verbosity": "error",
-        "jwt_secret_key": "arquitecto_secret_v5",
         "username": "freqtrader",
         "password": "SuperPassword123"
     },
-    "bot_name": "Sniper_V5_Dynamic",
-    "initial_state": "running"
+    "entry_pricing": { "price_side": "same", "use_order_book": true },
+    "exit_pricing": { "price_side": "same", "use_order_book": true }
 }
