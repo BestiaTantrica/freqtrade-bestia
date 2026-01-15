@@ -8,9 +8,6 @@
     "timeframe": "5m",
     "dry_run": true,
     "stoploss": -0.15,
-    "minimal_roi": {
-        "0": 0.10
-    },
     "entry_pricing": {
         "price_side": "same",
         "use_order_book": true,

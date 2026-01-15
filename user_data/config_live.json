@@ -77,7 +77,7 @@
     "timeframe": "5m",
     "initial_state": "running",
     "strategy_params": {
-        "buy_rsi": 32,
+        "buy_rsi": 28,
         "buy_adx": 20
     }
 }
