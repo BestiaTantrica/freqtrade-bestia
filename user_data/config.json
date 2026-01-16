@@ -1,42 +1,23 @@
 {
-    "max_open_trades": 5,
+    "max_open_trades": 1,
     "stake_currency": "USDT",
     "stake_amount": "unlimited",
-    "tradable_balance_ratio": 0.90,
+    "tradable_balance_ratio": 0.99,
+    "last_stake_amount_min_ratio": 0.5,
+    "fiat_display_currency": "USD",
     "dry_run": true,
     "dry_run_wallet": 300,
-    "bot_name": "Sniper_V8_GitRestored",
-    "strategy": "SniperV5_MathLab",
+    "strategy": "FractalAggressiveV12",
+    "timeframe": "5m",
     "exchange": {
         "name": "binance",
-        "pair_whitelist": [
-            "BTC/USDT",
-            "ETH/USDT",
-            "SOL/USDT",
-            "BNB/USDT",
-            "XRP/USDT",
-            "ADA/USDT",
-            "AVAX/USDT",
-            "DOGE/USDT",
-            "LINK/USDT",
-            "DOT/USDT"
-        ],
-        "ccxt_config": {"enableRateLimit": true}
+        "key": "",
+        "secret": "",
+        "ccxt_config": {},
+        "ccxt_async_config": {}
     },
-    "pairlists": [{"method": "StaticPairList"}],
-    "telegram": {
-        "enabled": true,
-        "token": "8073681433:AAHKneBxYgAdq56aaMrWm95eKeT2v8FvyFI",
-        "chat_id": "6527908321",
-        "notification_settings": {"status": "on", "entry": "on", "exit": "on"}
-    },
-    "api_server": {
-        "enabled": true,
-        "listen_ip_address": "0.0.0.0",
-        "listen_port": 8080,
-        "username": "freqtrader",
-        "password": "SuperPassword123"
-    },
-    "entry_pricing": { "price_side": "same", "use_order_book": true },
-    "exit_pricing": { "price_side": "same", "use_order_book": true }
+    "pair_whitelist": [
+        "BTC/USDT"
+    ],
+    "pair_blacklist": []
 }
