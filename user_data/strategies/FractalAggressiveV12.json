@@ -1,0 +1,30 @@
+{
+  "strategy_name": "FractalAggressiveV12",
+  "params": {
+    "roi": {
+      "0": 0.1,
+      "60": 0.05,
+      "120": 0.02
+    },
+    "stoploss": {
+      "stoploss": -0.06
+    },
+    "trailing": {
+      "trailing_stop": false,
+      "trailing_stop_positive": null,
+      "trailing_stop_positive_offset": 0.0,
+      "trailing_only_offset_is_reached": false
+    },
+    "max_open_trades": {
+      "max_open_trades": 3
+    },
+    "buy": {
+      "buy_adx": 41,
+      "buy_mfi": 23,
+      "buy_obv_factor": 1.018,
+      "buy_rsi": 26
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2026-01-17 02:53:42.804646+00:00"
+}
