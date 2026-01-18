@@ -1,0 +1,38 @@
+{
+    "max_open_trades": 3,
+    "stake_currency": "USDT",
+    "stake_amount": "unlimited",
+    "tradable_balance_ratio": 0.9,
+    "dry_run": true,
+    "dry_run_wallet": 300,
+    "exchange": {
+        "name": "binance",
+        "pair_whitelist": [
+            "ETH/USDT",
+            "SOL/USDT",
+            "AVAX/USDT",
+            "LINK/USDT",
+            "DOT/USDT"
+        ]
+    },
+    "pairlists": [
+        {
+            "method": "StaticPairList"
+        }
+    ],
+    "entry_pricing": {
+        "price_side": "same",
+        "use_order_book": true,
+        "order_book_top": 1
+    },
+    "exit_pricing": {
+        "price_side": "same",
+        "use_order_book": true,
+        "order_book_top": 1
+    },
+    "telegram": {
+        "enabled": true,
+        "token": "8073681433:AAHKneBxYgAdq56aaMrWm95eKeT2v8FvyFI",
+        "chat_id": "6527908321"
+    }
+}
