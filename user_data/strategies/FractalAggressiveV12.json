@@ -1,30 +1,38 @@
 {
-  "strategy_name": "FractalAggressiveV12",
+  "strategy_name": "FractalAggressiveV14",
   "params": {
     "roi": {
-      "0": 0.1,
-      "60": 0.05,
-      "120": 0.02
+      "0": 0.3,
+      "60": 0.1,
+      "150": 0.03,
+      "300": 0
     },
     "stoploss": {
-      "stoploss": -0.06
+      "stoploss": -0.1
     },
     "trailing": {
-      "trailing_stop": false,
-      "trailing_stop_positive": null,
-      "trailing_stop_positive_offset": 0.0,
-      "trailing_only_offset_is_reached": false
+      "trailing_stop": true,
+      "trailing_stop_positive": 0.03,
+      "trailing_stop_positive_offset": 0.05,
+      "trailing_only_offset_is_reached": true
     },
     "max_open_trades": {
       "max_open_trades": 3
     },
     "buy": {
-      "buy_adx": 41,
-      "buy_mfi": 23,
-      "buy_obv_factor": 1.018,
-      "buy_rsi": 26
+      "b1_adx": 29,
+      "b1_obv": 1.027,
+      "b1_rsi": 60,
+      "b2_adx": 33,
+      "b2_obv": 1.472,
+      "b2_rsi": 74,
+      "b3_adx": 41,
+      "b3_obv": 1.047,
+      "b3_rsi": 50,
+      "btc_adx_threshold": 45,
+      "btc_rsi_threshold": 71
     }
   },
   "ft_stratparam_v": 1,
-  "export_time": "2026-01-17 02:53:42.804646+00:00"
+  "export_time": "2026-01-18 09:42:43.145668+00:00"
 }

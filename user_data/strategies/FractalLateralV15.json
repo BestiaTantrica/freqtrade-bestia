@@ -1,0 +1,35 @@
+{
+  "strategy_name": "FractalLateralV15",
+  "params": {
+    "roi": {
+      "0": 0.05,
+      "30": 0.02,
+      "60": 0
+    },
+    "stoploss": {
+      "stoploss": -0.05
+    },
+    "trailing": {
+      "trailing_stop": false,
+      "trailing_stop_positive": null,
+      "trailing_stop_positive_offset": 0.0,
+      "trailing_only_offset_is_reached": false
+    },
+    "max_open_trades": {
+      "max_open_trades": 3
+    },
+    "buy": {
+      "c1_bb_offset": 0.999,
+      "c1_rsi_entry": 32,
+      "c2_rsi_entry": 22,
+      "c3_atr_threshold": 1.979,
+      "c3_rsi_entry": 20,
+      "max_adx_lateral": 13
+    },
+    "sell": {
+      "c2_rsi_exit": 61
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2026-01-18 11:15:41.685009+00:00"
+}

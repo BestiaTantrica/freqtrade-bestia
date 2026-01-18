@@ -1,0 +1,36 @@
+{
+  "strategy_name": "FractalBajistaV17B",
+  "params": {
+    "roi": {
+      "0": 0.1,
+      "30": 0.05,
+      "60": 0.02,
+      "120": 0
+    },
+    "stoploss": {
+      "stoploss": -0.1
+    },
+    "trailing": {
+      "trailing_stop": false,
+      "trailing_stop_positive": null,
+      "trailing_stop_positive_offset": 0.0,
+      "trailing_only_offset_is_reached": false
+    },
+    "max_open_trades": {
+      "max_open_trades": 15
+    },
+    "buy": {
+      "b1_bb_offset": 0.978,
+      "b1_rsi": 22,
+      "b2_bb_offset": 0.944,
+      "b2_rsi": 16,
+      "b3_bb_offset": 0.862,
+      "b3_rsi": 9
+    },
+    "sell": {
+      "sell_rsi": 81
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2026-01-18 14:48:24.747299+00:00"
+}
