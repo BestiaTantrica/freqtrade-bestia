@@ -1,0 +1,25 @@
+{
+  "strategy_name": "FractalMasterSelector",
+  "params": {
+    "roi": {},
+    "stoploss": {
+      "stoploss": -0.1
+    },
+    "trailing": {
+      "trailing_stop": true,
+      "trailing_stop_positive": 0.02,
+      "trailing_stop_positive_offset": 0.03,
+      "trailing_only_offset_is_reached": true
+    },
+    "max_open_trades": {
+      "max_open_trades": 15
+    },
+    "sell": {
+      "v15_tp_din": 0.02,
+      "v18_stoploss_din": -0.01,
+      "v18_tp_din": 0.047
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2026-01-19 06:04:19.651032+00:00"
+}

@@ -5,3 +5,10 @@ user_data/data/*
 *.log
 __pycache__/
 .env
+# --- Fractal Sentinel Specific ---
+user_data/market_state.json
+RegimeSentinel.py
+*.db
+*.log
+user_data/backtest_results/
+user_data/data/

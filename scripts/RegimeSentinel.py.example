@@ -1,0 +1,60 @@
+import feedparser
+import json
+import time
+import os
+
+# --- CONFIGURACIÓN DE INGENIERÍA ---
+# Ruta del puente (Adentro de user_data para que Freqtrade lo vea)
+PATH_PUENTE = os.path.join('user_data', 'market_state.json')
+
+FEEDS = [
+    'https://cryptopanic.com/news/rss/',
+    'https://es.cointelegraph.com/rss/tag/bitcoin',
+    'https://www.newsbtc.com/feed/'
+]
+
+# Diccionario de impacto de 9 niveles
+PALABRAS_IMPACTO = {
+    'BULL_EXTREME': ['ath', 'parabolic', 'moon', 'etf approved', 'halving pump', 'bullish explosion', 'institutional buy'],
+    'BULL_MODERATE': ['upgrade', 'listing', 'partnership', 'adoption', 'growth', 'recovery', 'bullish'],
+    'BEAR_MODERATE': ['correction', 'drain', 'sec inquiry', 'outage', 'unsteady', 'bearish', 'selloff'],
+    'BEAR_EXTREME': ['crash', 'liquidation', 'hack', 'collapse', 'fed hike', 'cpi high', 'bankruptcy', 'panic', 'scam']
+}
+
+def analizar_sentimiento():
+    score = 0
+    for url in FEEDS:
+        try:
+            feed = feedparser.parse(url)
+            for entry in feed.entries[:15]:
+                titulo = entry.title.lower()
+                # Evaluación
+                if any(w in titulo for w in PALABRAS_IMPACTO['BULL_EXTREME']): score += 2
+                elif any(w in titulo for w in PALABRAS_IMPACTO['BULL_MODERATE']): score += 1
+                if any(w in titulo for w in PALABRAS_IMPACTO['BEAR_EXTREME']): score -= 2
+                elif any(w in titulo for w in PALABRAS_IMPACTO['BEAR_MODERATE']): score -= 1
+        except Exception as e:
+            print(f"Error en feed {url}: {e}")
+
+    # Escala final de -4 a 4
+    score_final = max(min(score, 4), -4)
+    
+    # Encastre de Modos
+    if score_final >= 2: modo = "v18_espada"
+    elif score_final <= -2: modo = "v17_escudo"
+    else: modo = "v15_camaleon"
+
+    return {
+        "sentiment_score": score_final,
+        "active_mode": modo,
+        "timestamp": time.strftime('%Y-%m-%d %H:%M:%S')
+    }
+
+if __name__ == "__main__":
+    print("--- REGIME SENTINEL: ANALIZADOR DE NOTICIAS ACTIVADO ---")
+    while True:
+        data = analizar_sentimiento()
+        with open(PATH_PUENTE, 'w') as f:
+            json.dump(data, f)
+        print(f"[{data['timestamp']}] Score: {data['sentiment_score']} | Modo: {data['active_mode']}")
+        time.sleep(600) # 10 minutos entre lecturas
